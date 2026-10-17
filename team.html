@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Team | Constitution Party Campaign</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <button class="burger-btn" onclick="toggleSidebar()" aria-label="Open Navigation">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <div class="logo">Candidate Name <span>| CONSTITUTION PARTY</span></div>
+        </div>
+        <div class="top-nav">
+            <a href="index.html" class="top-nav-link">Home</a>
+            <a href="about.html" class="top-nav-link">About</a>
+            <a href="issues.html" class="top-nav-link">Issues</a>
+            <a href="donate.html" class="btn-donate-nav">DONATE</a>
+        </div>
+    </header>
+
+    <!-- Overlay Background when Sidebar is Open -->
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Interactive Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Campaign Menu</h2>
+            <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+        </div>
+
+        <div class="nav-category">
+            <h3>Main Navigation</h3>
+            <ul>
+                <li><a href="index.html">Home Page</a></li>
+                <li><a href="about.html">About the Candidate</a></li>
+                <li><a href="issues.html">Political Issues</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-category">
+            <h3>Campaign & Media</h3>
+            <ul>
+                <li><a href="materials.html">Campaign Materials</a></li>
+                <li><a href="news.html">News & Press Releases</a></li>
+                <li><a href="team.html" class="active-link">Meet the Campaign Team</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-category">
+            <h3>Get Involved</h3>
+            <ul>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="donate.html" class="highlight-link">Donate to Campaign</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Banner Header -->
+    <div class="page-header">
+        <h1>Meet Our Campaign Team</h1>
+        <p>The dedicated citizens driving our grassroots constitutional movement.</p>
+    </div>
+
+    <!-- Main Team Content Section -->
+    <section class="container">
+        <div class="grid-2">
+            <div>
+                <h2 style="font-family: var(--font-heading); color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.8rem;">
+                    A Grassroots Movement
+                </h2>
+                <p style="margin-bottom: 1rem; font-size: 1.05rem; line-height: 1.7;">
+                    Behind every great campaign is a passionate team of local citizens dedicated to restoring constitutional governance, personal liberty, and fiscal integrity.
+                </p>
+                <p style="margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.7;">
+                    Our staff and volunteers work tirelessly across precincts to distribute literature, organize town halls, and share our vision with neighbors.
+                </p>
+                <a href="contact.html" class="btn btn-primary">JOIN THE TEAM</a>
+            </div>
+
+            <div class="image-frame">
+                <!-- Expects team.jpg in your images/ directory -->
+                <img src="images/team.jpg" alt="Campaign Team Photo" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Leadership Cards Grid -->
+    <section class="container bg-alt" style="max-width: 100%;">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <h2 class="section-title">Campaign Leadership</h2>
+            <p class="section-subtitle">Guiding our daily operations and community outreach</p>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Campaign Manager</h3>
+                    <p>Oversees strategic strategy, town hall schedules, and district operations.</p>
+                </div>
+                <div class="card">
+                    <h3>Communications Director</h3>
+                    <p>Handles press inquiries, campaign materials, and digital media outreach.</p>
+                </div>
+                <div class="card">
+                    <h3>Volunteer Coordinator</h3>
+                    <p>Organizes door-to-door canvas teams, precinct captains, and event staffing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Candidate Name for Public Office</strong> &bull; Constitution Party</p>
+        <div class="footer-disclaimer">PAID FOR BY THE COMMITTEE TO ELECT CANDIDATE NAME</div>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">&copy; 2026 Candidate Campaign. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Linked to style.js -->
+    <script src="style.js"></script>
+</body>
+</html>
