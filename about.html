@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Candidate | Constitution Party</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <button class="burger-btn" onclick="toggleSidebar()">
+                <div></div><div></div><div></div>
+            </button>
+            <div class="logo">Candidate Name <span>| CONSTITUTION PARTY</span></div>
+        </div>
+        <div class="top-nav">
+            <a href="index.html" class="top-nav-link">Home</a>
+            <a href="issues.html" class="top-nav-link">Issues</a>
+            <a href="donate.html" class="btn-donate-nav">DONATE</a>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Campaign Menu</h2>
+            <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+        </div>
+        <div class="nav-category">
+            <h3>Main Navigation</h3>
+            <ul>
+                <li><a href="index.html">Home Page</a></li>
+                <li><a href="about.html" class="active-link">About the Candidate</a></li>
+                <li><a href="issues.html">Political Issues</a></li>
+            </ul>
+        </div>
+        <div class="nav-category">
+            <h3>Campaign & Media</h3>
+            <ul>
+                <li><a href="materials.html">Campaign Materials</a></li>
+                <li><a href="news.html">News & Press Releases</a></li>
+                <li><a href="team.html">Meet the Campaign Team</a></li>
+            </ul>
+        </div>
+        <div class="nav-category">
+            <h3>Get Involved</h3>
+            <ul>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="donate.html" class="highlight-link">Donate to Campaign</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>About Candidate Name</h1>
+        <p>"A lifetime of service built on integrity, family values, and devotion to liberty."</p>
+    </div>
+
+    <section class="container">
+        <div class="grid-2">
+            <div class="image-frame">
+                <img src="images/candidate.jpg" alt="Candidate Portrait" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div>
+                <h2 style="font-family: var(--font-heading); color: var(--primary-blue); font-size: 1.8rem; margin-bottom: 1rem;">Principles Over Politics</h2>
+                <p style="margin-bottom: 1rem;">I am running as a candidate with the Constitution Party because our community deserves representatives who honor their oath to defend the Constitution without compromise.</p>
+                <p style="margin-bottom: 1rem;">Having lived and worked in this district for years, I have seen firsthand the challenges families face from inflation, rising taxes, and political division.</p>
+                <p>My commitment is simple: limited government oversight, strong constitutional rights, fiscal prudence, and open accountability to you.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Candidate Name for Public Office</strong> &bull; Constitution Party</p>
+        <div class="footer-disclaimer">PAID FOR BY THE COMMITTEE TO ELECT CANDIDATE NAME</div>
+    </footer>
+    <script src="style.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Name | Constitution Party Campaign</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <button class="burger-btn" onclick="toggleSidebar()" aria-label="Open Navigation">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <div class="logo">Candidate Name <span>| CONSTITUTION PARTY</span></div>
+        </div>
+        <div class="top-nav">
+            <a href="about.html" class="top-nav-link">About</a>
+            <a href="issues.html" class="top-nav-link">Issues</a>
+            <a href="team.html" class="top-nav-link">Team</a>
+            <a href="donate.html" class="btn-donate-nav">DONATE</a>
+        </div>
+    </header>
+
+    <!-- Overlay Background for Sidebar -->
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Interactive Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Campaign Menu</h2>
+            <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+        </div>
+
+        <div class="nav-category">
+            <h3>Main Navigation</h3>
+            <ul>
+                <li><a href="index.html" class="active-link">Home Page</a></li>
+                <li><a href="about.html">About the Candidate</a></li>
+                <li><a href="issues.html">Political Issues</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-category">
+            <h3>Campaign & Media</h3>
+            <ul>
+                <li><a href="materials.html">Campaign Materials</a></li>
+                <li><a href="news.html">News & Press Releases</a></li>
+                <li><a href="team.html">Meet the Campaign Team</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-category">
+            <h3>Get Involved</h3>
+            <ul>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="donate.html" class="highlight-link">Donate to Campaign</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/banner.jpg" alt="Campaign Banner Background" class="hero-bg" onerror="this.src='https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1600&q=80'">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Restoring Constitutional Integrity <span>& Sovereign Liberty</span></h1>
+            <p>Principled Constitutional Leadership for Our Community and Nation</p>
+            <div class="hero-buttons">
+                <a href="issues.html" class="btn btn-primary">OUR PLATFORM</a>
+                <a href="donate.html" class="btn btn-secondary">CONTRIBUTE NOW</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Candidate Intro Section -->
+    <section class="container">
+        <h2 class="section-title">A Dedicated Voice for Liberty</h2>
+        <p class="section-subtitle">Faithful to the U.S. Constitution & Committed to the People</p>
+        <div class="grid-2">
+            <div class="image-frame">
+                <img src="images/candidate.jpg" alt="Candidate Photo" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80'">
+            </div>
+            <div>
+                <h3 style="font-family: var(--font-heading); color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 1rem;">Welcome to Our Movement</h3>
+                <p style="margin-bottom: 1rem;">As a Constitution Party candidate, my core mission is restoring constitutional bounds to state and federal government, protecting God-given rights, and revitalizing economic independence for American families.</p>
+                <p style="margin-bottom: 1.5rem;">We do not answer to corporate special interests—our allegiance belongs entirely to the U.S. Constitution and the citizens we serve.</p>
+                <a href="about.html" class="btn btn-outline">Read Full Biography &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Political Priority Issues Highlights -->
+    <section class="container bg-alt" style="max-width: 100%;">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <h2 class="section-title">Priority Platform Pillars</h2>
+            <p class="section-subtitle">Our Three Fundamental Priorities for Constitutional Government</p>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>1. Constitutional Fidelity</h3>
+                    <p>Strict adherence to the original intent of the U.S. Constitution. Ending federal overreach and protecting local sovereignty.</p>
+                    <a href="issues.html" style="color: var(--accent-red); font-weight: 700; text-decoration: none; display: inline-block; margin-top: 1rem;">Learn Position &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>2. Fiscal Responsibility</h3>
+                    <p>Eliminating wasteful spending, balancing budgets, stopping inflation, and cutting burdensome taxes for working citizens.</p>
+                    <a href="issues.html" style="color: var(--accent-red); font-weight: 700; text-decoration: none; display: inline-block; margin-top: 1rem;">Learn Position &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3>3. Individual Freedom</h3>
+                    <p>Defending fundamental civil liberties, free speech, parental rights, and individual self-reliance from bureaucratic control.</p>
+                    <a href="issues.html" style="color: var(--accent-red); font-weight: 700; text-decoration: none; display: inline-block; margin-top: 1rem;">Learn Position &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Donate Callout -->
+    <section class="container">
+        <div class="donate-cta-box">
+            <h2>Power Our Grassroots Movement</h2>
+            <p>Every dollar stays local to help print flyers, run ads, and spread constitutional principles.</p>
+            <div class="donate-amounts">
+                <button class="amt-btn">$25</button>
+                <button class="amt-btn active">$50</button>
+                <button class="amt-btn">$100</button>
+                <button class="amt-btn">$250</button>
+                <button class="amt-btn">$500</button>
+            </div>
+            <a href="donate.html" class="btn btn-secondary" style="font-size: 1rem; padding: 1rem 2.5rem;">CONTINUE TO DONATE</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Candidate Name for Public Office</strong> &bull; Constitution Party</p>
+        <div class="footer-disclaimer">PAID FOR BY THE COMMITTEE TO ELECT CANDIDATE NAME</div>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">&copy; 2026 Candidate Campaign. All Rights Reserved.</p>
+    </footer>
+
+    <script src="style.js"></script>
+</body>
+</html>

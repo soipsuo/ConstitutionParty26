@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Priority Platform | Constitution Party</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <button class="burger-btn" onclick="toggleSidebar()">
+                <div></div><div></div><div></div>
+            </button>
+            <div class="logo">Candidate Name <span>| CONSTITUTION PARTY</span></div>
+        </div>
+        <div class="top-nav">
+            <a href="index.html" class="top-nav-link">Home</a>
+            <a href="about.html" class="top-nav-link">About</a>
+            <a href="donate.html" class="btn-donate-nav">DONATE</a>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Campaign Menu</h2>
+            <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+        </div>
+        <div class="nav-category">
+            <h3>Main Navigation</h3>
+            <ul>
+                <li><a href="index.html">Home Page</a></li>
+                <li><a href="about.html">About the Candidate</a></li>
+                <li><a href="issues.html" class="active-link">Political Issues</a></li>
+            </ul>
+        </div>
+        <div class="nav-category">
+            <h3>Campaign & Media</h3>
+            <ul>
+                <li><a href="materials.html">Campaign Materials</a></li>
+                <li><a href="news.html">News & Press Releases</a></li>
+                <li><a href="team.html">Meet the Campaign Team</a></li>
+            </ul>
+        </div>
+        <div class="nav-category">
+            <h3>Get Involved</h3>
+            <ul>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="donate.html" class="highlight-link">Donate to Campaign</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>Our 3 Priority Issues</h1>
+        <p>Restoring founding principles to contemporary governance</p>
+    </div>
+
+    <section class="container">
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+            <div class="card" style="border-top-width: 6px;">
+                <h2 style="font-family: var(--font-heading); color: var(--primary-blue); font-size: 1.6rem; margin-bottom: 0.5rem;">Issue 1: Defending Constitutional Limits</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7;">Government authority must remain strictly within the bounds specified by the Constitution. We advocate for reducing unelected regulatory power, returning power to state and local levels, and preserving individual rights.</p>
+            </div>
+            <div class="card" style="border-top-width: 6px;">
+                <h2 style="font-family: var(--font-heading); color: var(--primary-blue); font-size: 1.6rem; margin-bottom: 0.5rem;">Issue 2: Fiscal Discipline & Economic Liberty</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7;">Persistent government debt and overspending diminish the purchasing power of every family. We advocate for balanced budgets, lowering tax burdens, and eliminating government waste.</p>
+            </div>
+            <div class="card" style="border-top-width: 6px;">
+                <h2 style="font-family: var(--font-heading); color: var(--primary-blue); font-size: 1.6rem; margin-bottom: 0.5rem;">Issue 3: Preserving Individual Liberties</h2>
+                <p style="font-size: 1.05rem; line-height: 1.7;">Protecting freedom of speech, religious liberty, private property rights, and parental authority in education are non-negotiable foundations of a free society.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Candidate Name for Public Office</strong> &bull; Constitution Party</p>
+        <div class="footer-disclaimer">PAID FOR BY THE COMMITTEE TO ELECT CANDIDATE NAME</div>
+    </footer>
+    <script src="style.js"></script>
+</body>
+</html>
