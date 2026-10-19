@@ -1,12 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News & Updates | Constitution Party</title>
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Newspaper Showcase Section */
+        
+        .newspaper-showcase {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .newspaper-title {
+            font-family: var(--font-heading);
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .newspaper-subtitle {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        /* Interactive Hover Container */
+        
+        .newspaper-container {
+            position: relative;
+            max-width: 750px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border: 3px solid var(--gold);
+            background-color: #000;
+        }
+        /* Newspaper Preview Image */
+        
+        .newspaper-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+        /* Hover Overlay Mask */
+        
+        .newspaper-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 47, 0.85);
+            /* Dark Navy Blue Translucent Overlay */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.35s ease-in-out;
+            padding: 1.5rem;
+        }
+        /* Hover Actions */
+        
+        .newspaper-container:hover .newspaper-img {
+            transform: scale(1.02);
+            opacity: 0.8;
+        }
+        
+        .newspaper-container:hover .newspaper-overlay {
+            opacity: 1;
+        }
+        /* Overlay Text & Download Button */
+        
+        .overlay-heading {
+            color: #ffffff;
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .overlay-subtext {
+            color: var(--gold);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-download-overlay {
+            background-color: var(--gold);
+            color: #0A192F;
+            font-weight: bold;
+            padding: 0.85rem 1.75rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+        
+        .btn-download-overlay:hover {
+            background-color: #e6b800;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
+
 <body>
     <header class="navbar">
         <div style="display: flex; align-items: center; gap: 1rem;">
@@ -59,16 +161,34 @@
     </div>
 
     <section class="container">
+        <!-- Press Releases / News Cards -->
         <div style="display: flex; flex-direction: column; gap: 1.5rem;">
             <div class="card">
                 <span style="color: var(--accent-red); font-weight: 700; font-size: 0.85rem;">PRESS RELEASE &bull; OCTOBER 2026</span>
                 <h3 style="margin-top: 0.3rem;">Campaign Announces District Town Hall Tour</h3>
-                <p>Join candidate Name for a series of open constitutional town hall discussions regarding economic liberty and local government accountability.</p>
+                <p>Join candidate Adam Hamdan for a series of open constitutional town hall discussions regarding economic liberty and local government accountability.</p>
             </div>
-            <div class="card">
-                <span style="color: var(--accent-red); font-weight: 700; font-size: 0.85rem;">CAMPAIGN UPDATE &bull; SEPTEMBER 2026</span>
-                <h3 style="margin-top: 0.3rem;">Volunteer Sign-Ups Pass Key Grassroots Milestone</h3>
-                <p>Our volunteer network has expanded across all local precincts, gearing up for door-to-door distribution of platform flyers.</p>
+
+        </div>
+
+        <!-- Official Campaign Newspaper Section Below Cards -->
+        <div class="newspaper-showcase">
+            <h2 class="newspaper-title">Special Campaign Newspaper Edition</h2>
+            <p class="newspaper-subtitle">Hover over the newspaper below to download the complete issue.</p>
+
+            <!-- Interactive Hover Container -->
+            <div class="newspaper-container">
+                <!-- Newspaper Preview Image -->
+                <img src="images/newspaper.png" alt="Faith Should Never Require Government Permission - Campaign Newspaper Issue 15" class="newspaper-img">
+
+                <!-- Hover Overlay with Download Link -->
+                <div class="newspaper-overlay">
+                    <h3 class="overlay-heading">Special Campaign Edition (Issue No. 15)</h3>
+                    <p class="overlay-subtext">"Faith Should Never Require Government Permission"</p>
+                    <a href="materials/Newspaper.pdf" download="Adam-Hamdan-Campaign-Newspaper.pdf" class="btn-download-overlay">
+                        📄 DOWNLOAD PDF EDITION
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -79,4 +199,5 @@
     </footer>
     <script src="style.js"></script>
 </body>
+
 </html>
