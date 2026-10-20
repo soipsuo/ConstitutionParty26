@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About the Candidate | Constitution Party</title>
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Big Briefing Paper Section */
+        
+        .briefing-paper-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--gold);
+            text-align: center;
+        }
+        
+        .briefing-title {
+            font-family: var(--font-heading);
+            color: var(--primary-blue);
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .briefing-subtext {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        /* Prominent Download Button */
+        
+        .btn-briefing-download {
+            display: inline-block;
+            background-color: var(--gold);
+            color: #0A192F;
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: bold;
+            padding: 1.1rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+        }
+        
+        .btn-briefing-download:hover {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
+
 <body>
     <header class="navbar">
         <div style="display: flex; align-items: center; gap: 1rem;">
@@ -66,10 +116,23 @@
             </div>
             <div>
                 <h2 style="font-family: var(--font-heading); color: var(--primary-blue); font-size: 1.8rem; margin-bottom: 1rem;">Principles Over Politics</h2>
-                <p style="margin-bottom: 1rem;">Adam Hamdan, the Constitution Party candidate for President, brings an unwavering commitment to God, his country, and the original intent of the United States Constitution as the forefathers intended. Born and raised in Bacon County, Georgia, Hamdan combines his natural rural community values with his extensive legal knowledge as a practicing attorney to conserve the life, liberty, and pursuit of happiness that the Constitution provides. Guided by his faith, Hamdan offers a vision on defending religious freedom, and the power of the American people.</p>
-                <p style="margin-bottom: 1rem;">Following his military service, Hamdan established Hamdan’s Law Firm, where he serves as CEO, overseeing legal operations and advocating for constitutional rights. He later entered politics, serving two years as a Georgia State Representative for the 34th District. In 2024, he ran as the Constitution Party’s vice presidential candidate, gaining experience in national politics.</p>
+                <p style="margin-bottom: 1rem;">Adam Hamdan, the Constitution Party candidate for President, brings an unwavering commitment to God, his country, and the original intent of the United States Constitution as the forefathers intended. Born and raised in Bacon County, Georgia,
+                    Hamdan combines his natural rural community values with his extensive legal knowledge as a practicing attorney to conserve the life, liberty, and pursuit of happiness that the Constitution provides. Guided by his faith, Hamdan offers
+                    a vision on defending religious freedom, and the power of the American people.</p>
+                <p style="margin-bottom: 1rem;">Following his military service, Hamdan established Hamdan’s Law Firm, where he serves as CEO, overseeing legal operations and advocating for constitutional rights. He later entered politics, serving two years as a Georgia State Representative
+                    for the 34th District. In 2024, he ran as the Constitution Party’s vice presidential candidate, gaining experience in national politics.</p>
                 <p>My commitment is simple: to keep those Constitutional rights FOR the people.</p>
             </div>
+        </div>
+
+        <!-- Big Briefing Paper Download Section at the Bottom -->
+        <div class="briefing-paper-section">
+            <h2 class="briefing-title">Official Candidate Briefing Paper</h2>
+            <p class="briefing-subtext">Download the detailed policy overview and constitutional principles briefing for Adam Hamdan.</p>
+
+            <a href="materials/briefing-paper.pdf" download="Adam-Hamdan-Briefing-Paper.pdf" class="btn-briefing-download">
+                📄 DOWNLOAD OFFICIAL BRIEFING PAPER (PDF)
+            </a>
         </div>
     </section>
 
@@ -79,4 +142,5 @@
     </footer>
     <script src="style.js"></script>
 </body>
+
 </html>

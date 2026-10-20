@@ -1,12 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meet the Team | Constitution Party</title>
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* --------------------------------------------------
+           3D Flip Card Container & Animation
+        -------------------------------------------------- */
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 480px;
+            perspective: 1000px;
+            /* Enables 3D perspective */
+            cursor: pointer;
+        }
+        /* Inner box that performs the flip */
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            border-radius: 8px;
+        }
+        /* Flip Action on Hover or Focus */
+        
+        .flip-card:hover .flip-card-inner,
+        .flip-card:focus .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        /* Card Front & Back Base Styles */
+        
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            border: 2px solid var(--gold, #C5A059);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 1.5rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        /* Front Styling */
+        
+        .card-front {
+            background-color: var(--card-bg, #ffffff);
+            color: var(--primary-blue, #0A192F);
+        }
+        /* Back Styling (Navy Blue Patriotic Design) */
+        
+        .card-back {
+            background-color: #0A192F;
+            color: #ffffff;
+            transform: rotateY(180deg);
+            border-color: var(--gold, #C5A059);
+        }
+        /* Front Elements */
+        
+        .team-photo-box {
+            width: 100%;
+            max-width: 200px;
+            height: 230px;
+            overflow: hidden;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            margin-bottom: 0.8rem;
+            background-color: #f5f5f5;
+        }
+        
+        .team-photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+        
+        .team-role {
+            color: var(--accent-red, #8B0000);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.2rem;
+        }
+        
+        .team-name {
+            font-family: var(--font-heading);
+            color: var(--primary-blue, #0A192F);
+            font-size: 1.35rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .team-bio {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.4;
+        }
+        
+        .flip-hint {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+        /* Back Elements */
+        
+        .back-role {
+            color: var(--gold, #C5A059);
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
+        
+        .back-name {
+            font-family: var(--font-heading);
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info-block {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.2rem;
+            border-radius: 6px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item {
+            margin-bottom: 0.8rem;
+            font-size: 0.92rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+        
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .contact-label {
+            color: var(--gold, #C5A059);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+        
+        .contact-link {
+            color: #ffffff;
+            text-decoration: none;
+            word-break: break-all;
+            transition: color 0.2s ease;
+        }
+        
+        .contact-link:hover {
+            color: var(--gold, #C5A059);
+            text-decoration: underline;
+        }
+        
+        .btn-card-action {
+            display: inline-block;
+            width: 100%;
+            padding: 0.65rem 0;
+            background-color: var(--gold, #C5A059);
+            color: #0A192F;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+            font-size: 0.9rem;
+        }
+        
+        .btn-card-action:hover {
+            background-color: #e6b800;
+        }
+    </style>
 </head>
+
 <body>
 
     <!-- Header Navigation -->
@@ -88,31 +285,259 @@
             </div>
 
             <div class="image-frame">
-                <!-- Expects team.jpg inside your images folder -->
                 <img src="images/team.jpg" alt="Campaign Team Photo" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80'">
             </div>
         </div>
     </section>
 
-    <!-- Team Roles Grid -->
-    <section class="container bg-alt" style="max-width: 100%;">
+    <!-- Team Leadership Flip Cards Section -->
+    <section class="container bg-alt" style="max-width: 100%; padding-top: 3rem; padding-bottom: 3rem;">
         <div style="max-width: 1100px; margin: 0 auto;">
-            <h2 class="section-title">Campaign Leadership</h2>
-            <p class="section-subtitle">Guiding our daily operations and community outreach</p>
-            
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Campaign Manager</h3>
-                    <p>Oversees strategic outreach, town hall planning, and district precinct operations.</p>
+            <h2 class="section-title" style="text-align: center; font-family: var(--font-heading); color: var(--primary-blue);">Campaign Leadership</h2>
+            <p class="section-subtitle" style="text-align: center; color: #555; margin-bottom: 2.5rem;">Hover or tap any card to view official contact information</p>
+
+            <div class="team-grid">
+
+                <!-- 1. Adam Hamdan -->
+                <div class="flip-card" tabindex="0">
+                    <div class="flip-card-inner">
+                        <!-- Card Front -->
+                        <div class="card-front">
+                            <div>
+                                <div class="team-photo-box">
+                                    <img src="images/adam.jpg" alt="Adam Hamdan" onerror="this.src='https://via.placeholder.com/200x230?text=Adam+Hamdan'">
+                                </div>
+                                <span class="team-role">Presidential Candidate</span>
+                                <h3 class="team-name">Adam Hamdan</h3>
+                                <p class="team-bio">Leading our movement to defend constitutional principles, religious liberty, and individual freedom.</p>
+                            </div>
+                            <span class="flip-hint">🔄 Hover/Tap to flip</span>
+                        </div>
+                        <!-- Card Back -->
+                        <div class="card-back">
+                            <div>
+                                <span class="back-role">Presidential Candidate</span>
+                                <h3 class="back-name">Adam Hamdan</h3>
+                                <div class="contact-info-block">
+                                    <div class="contact-item">
+                                        <span class="contact-label">Campaign Email</span>
+                                        <a href="mailto:ahamdan@constitutionparty.org" class="contact-link">ahamdan@constitutionparty.org</a>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-label">Official Phone</span>
+                                        <a href="tel:4708304199" class="contact-link">(470) 830-4199</a>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-label">HQ Location</span>
+                                        <span style="color: #ccc;">Bacon County, Georgia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="mailto:ahamdan@constitutionparty.org" class="btn-card-action">Send Direct Email</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Communications Director</h3>
-                    <p>Handles press inquiries, official statements, and digital media communications.</p>
+
+                <!-- 2. David Jeon -->
+                <div class="flip-card" tabindex="0">
+                    <div class="flip-card-inner">
+                        <!-- Card Front -->
+                        <div class="card-front">
+                            <div>
+                                <div class="team-photo-box">
+                                    <img src="images/david.jpg" alt="David Jeon" onerror="this.src='https://via.placeholder.com/200x230?text=David+Jeon'">
+                                </div>
+                                <span class="team-role">Vice Presidential Candidate</span>
+                                <h3 class="team-name">David Jeon</h3>
+                                <p class="team-bio">Partnering to spearhead grassroots mobilization and national policy initiatives across the country.</p>
+                            </div>
+                            <span class="flip-hint">🔄 Hover/Tap to flip</span>
+                        </div>
+                        <!-- Card Back -->
+                        <div class="card-back">
+                            <div>
+                                <span class="back-role">Vice Presidential Candidate</span>
+                                <h3 class="back-name">David Jeon</h3>
+                                <div class="contact-info-block">
+                                    <div class="contact-item">
+                                        <span class="contact-label">Campaign Email</span>
+                                        <a href="mailto:djeon@constitutionparty.org" class="contact-link">djeon@constitutionparty.org</a>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-label">Official Phone</span>
+                                        <a href="tel:7704508122" class="contact-link">(770) 450-8122</a>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-label">HQ Location</span>
+                                        <span style="color: #ccc;">Gwinnett County, Georgia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="mailto:djeon@constitutionparty.org" class="btn-card-action">Send Direct Email</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Volunteer Coordinator</h3>
-                    <p>Organizes door-to-door canvassing, literature distribution, and event staffing.</p>
+
+                <!-- 3. Claire Choi -->
+                <div class="flip-card" tabindex="0">
+                    <div class="flip-card-inner">
+                        <!-- Card Front -->
+                        <div class="card-front">
+                            <div>
+                                <div class="team-photo-box">
+                                    <img src="images/claire.jpg" alt="Claire Choi" onerror="this.src='https://via.placeholder.com/200x230?text=Claire+Choi'">
+                                </div>
+                                <span class="team-role">Campaign Manager</span>
+                                <h3 class="team-name">Claire Choi</h3>
+                                <p class="team-bio">Oversees strategic outreach, town hall planning, and daily campaign operations nationwide.</p>
+                            </div>
+                            <span class="flip-hint">🔄 Hover/Tap to flip</span>
+                        </div>
+                        <!-- Card Back -->
+                        <div class="card-back">
+                            <div>
+                                <span class="back-role">Campaign Manager</span>
+                                <h3 class="back-name">Claire Choi</h3>
+                                <div class="contact-info-block">
+                                    <div class="contact-item">
+                                        <span class="contact-label">Campaign Email</span>
+                                        <a href="mailto:cchoi@constitutionparty.org" class="contact-link">cchoi@constitutionparty.org</a>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-label">Official Phone</span>
+                                        <a href="tel:4045513904" class="contact-link">(404) 551-3904</a>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-label">HQ Location</span>
+                                        <span style="color: #ccc;">Atlanta, Georgia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="mailto:cchoi@constitutionparty.org" class="btn-card-action">Send Direct Email</a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- 4. Bennie Le -->
+                <div class="flip-card" tabindex="0">
+                    <div class="flip-card-inner">
+                        <!-- Card Front -->
+                        <div class="card-front">
+                            <div>
+                                <div class="team-photo-box">
+                                    <img src="images/bennie.jpg" alt="Bennie Le" onerror="this.src='https://via.placeholder.com/200x230?text=Bennie+Le'">
+                                </div>
+                                <span class="team-role">Press Secretary</span>
+                                <h3 class="team-name">Bennie Le</h3>
+                                <p class="team-bio">Handles official press statements, media communications, and public relations for the campaign.</p>
+                            </div>
+                            <span class="flip-hint">🔄 Hover/Tap to flip</span>
+                        </div>
+                        <!-- Card Back -->
+                        <div class="card-back">
+                            <div>
+                                <span class="back-role">Press Secretary</span>
+                                <h3 class="back-name">Bennie Le</h3>
+                                <div class="contact-info-block">
+                                    <div class="contact-item">
+                                        <span class="contact-label">Press Email</span>
+                                        <a href="mailto:ble@constitutionparty.org" class="contact-link">ble@constitutionparty.org</a>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-label">Media Hotline</span>
+                                        <a href="tel:4706229103" class="contact-link">(470) 622-9103</a>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-label">HQ Location</span>
+                                        <span style="color: #ccc;">Fulton County, Georgia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="mailto:ble@constitutionparty.org" class="btn-card-action">Media Inquiry Email</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Noah Auh -->
+                <div class="flip-card" tabindex="0">
+                    <div class="flip-card-inner">
+                        <!-- Card Front -->
+                        <div class="card-front">
+                            <div>
+                                <div class="team-photo-box">
+                                    <img src="images/noah.jpg" alt="Noah Auh" onerror="this.src='https://via.placeholder.com/200x230?text=Noah+Auh'">
+                                </div>
+                                <span class="team-role">Policy Director</span>
+                                <h3 class="team-name">Noah Auh</h3>
+                                <p class="team-bio">Directs policy research, constitutional analysis, and key platform development.</p>
+                            </div>
+                            <span class="flip-hint">🔄 Hover/Tap to flip</span>
+                        </div>
+                        <!-- Card Back -->
+                        <div class="card-back">
+                            <div>
+                                <span class="back-role">Policy Director</span>
+                                <h3 class="back-name">Noah Auh</h3>
+                                <div class="contact-info-block">
+                                    <div class="contact-item">
+                                        <span class="contact-label">Policy Desk Email</span>
+                                        <a href="mailto:nauh@constitutionparty.org" class="contact-link">nauh@constitutionparty.org</a>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-label">Official Phone</span>
+                                        <a href="tel:7708823011" class="contact-link">(770) 882-3011</a>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-label">HQ Location</span>
+                                        <span style="color: #ccc;">Cobb County, Georgia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="mailto:nauh@constitutionparty.org" class="btn-card-action">Send Direct Email</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Jayden Choi -->
+                <div class="flip-card" tabindex="0">
+                    <div class="flip-card-inner">
+                        <!-- Card Front -->
+                        <div class="card-front">
+                            <div>
+                                <div class="team-photo-box">
+                                    <img src="images/jayden.jpg" alt="Jayden Choi" onerror="this.src='https://via.placeholder.com/200x230?text=Jayden+Choi'">
+                                </div>
+                                <span class="team-role">Treasurer</span>
+                                <h3 class="team-name">Jayden Choi</h3>
+                                <p class="team-bio">Manages campaign finances, compliance, and grassroots donation operations.</p>
+                            </div>
+                            <span class="flip-hint">🔄 Hover/Tap to flip</span>
+                        </div>
+                        <!-- Card Back -->
+                        <div class="card-back">
+                            <div>
+                                <span class="back-role">Treasurer</span>
+                                <h3 class="back-name">Jayden Choi</h3>
+                                <div class="contact-info-block">
+                                    <div class="contact-item">
+                                        <span class="contact-label">Finance Email</span>
+                                        <a href="mailto:jchoi@constitutionparty.org" class="contact-link">jchoi@constitutionparty.org</a>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-label">Official Phone</span>
+                                        <a href="tel:4049187420" class="contact-link">(404) 918-7420</a>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-label">HQ Location</span>
+                                        <span style="color: #ccc;">DeKalb County, Georgia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="mailto:jchoi@constitutionparty.org" class="btn-card-action">Finance Inquiry Email</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -127,4 +552,5 @@
     <!-- JavaScript -->
     <script src="style.js"></script>
 </body>
+
 </html>
