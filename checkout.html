@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Constitution Party Shop</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .order-summary-card {
+            background-color: var(--card-bg, #ffffff);
+            border: 2px solid var(--gold, #C5A059);
+            border-radius: 8px;
+            padding: 1.5rem;
+            height: fit-content;
+        }
+        
+        .summary-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .summary-item img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.4rem;
+            color: var(--primary-blue, #0A192F);
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn-complete-order {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--gold, #C5A059);
+            color: #0A192F;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.25s ease;
+            margin-top: 1rem;
+        }
+        
+        .btn-complete-order:hover {
+            background-color: #e6b800;
+        }
+        
+        @media (max-width: 768px) {
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <button class="burger-btn" onclick="toggleSidebar()">
+                <div></div><div></div><div></div>
+            </button>
+            <div class="logo">Adam Hamdan <span>| CONSTITUTION PARTY</span></div>
+        </div>
+        <div class="top-nav">
+            <a href="index.html" class="top-nav-link">Home</a>
+            <a href="shop.html" class="top-nav-link">Shop</a>
+            <a href="donate.html" class="btn-donate-nav">DONATE</a>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Adam Hamdan for President</h2>
+            <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+        </div>
+        <div class="nav-category">
+            <h3>Main Navigation</h3>
+            <ul>
+                <li><a href="index.html">Home Page</a></li>
+                <li><a href="about.html">About the Candidate</a></li>
+                <li><a href="issues.html">Political Issues</a></li>
+            </ul>
+        </div>
+        <div class="nav-category">
+            <h3>Campaign & Media</h3>
+            <ul>
+                <li><a href="materials.html">Campaign Materials</a></li>
+                <li><a href="news.html">News & Press Releases</a></li>
+                <li><a href="team.html">Meet the Campaign Team</a></li>
+                <li><a href="shop.html" class="active-link">Official Campaign Shop</a></li>
+            </ul>
+        </div>
+        <div class="nav-category">
+            <h3>Get Involved</h3>
+            <ul>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="donate.html" class="highlight-link">Donate to Campaign</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>Secure Checkout</h1>
+        <p>Complete your purchase to support the campaign</p>
+    </div>
+
+    <section class="container">
+        <div class="checkout-grid">
+
+            <!-- Order Summary Sidebar -->
+            <div class="order-summary-card">
+                <h3 style="font-family: var(--font-heading); color: var(--primary-blue); margin-bottom: 1rem;">Order Summary</h3>
+                <div class="summary-item">
+                    <img src="images/bumpersticker.png" alt="Bumper Sticker" onerror="this.src='https://via.placeholder.com/80x60?text=Sticker'">
+                    <div>
+                        <strong>Official Bumper Sticker</strong>
+                        <div style="color: #666; font-size: 0.9rem;">Qty: 1</div>
+                        <div style="font-weight: bold; color: var(--primary-blue);">$20.00</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>Subtotal</span>
+                    <span>$20.00</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: #666;">
+                    <span>Shipping</span>
+                    <span>FREE</span>
+                </div>
+                <hr style="margin: 1rem 0; border: 0; border-top: 1px solid #ddd;">
+                <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.2rem; color: var(--primary-blue);">
+                    <span>Total</span>
+                    <span>$20.00</span>
+                </div>
+            </div>
+
+            <!-- Checkout Form -->
+            <div class="card">
+                <h3 style="font-family: var(--font-heading); color: var(--primary-blue); margin-bottom: 1.5rem;">Shipping & Payment Details</h3>
+                <form onsubmit="alert('Thank you for supporting Adam Hamdan for President! Your campaign sticker order has been placed.'); return false;">
+
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" required placeholder="Adam">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" required placeholder="Hamdan">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required placeholder="supporter@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Shipping Address</label>
+                        <input type="text" id="address" required placeholder="123 Constitutional Way">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 2;">
+                            <label for="city">City</label>
+                            <input type="text" id="city" required placeholder="Bacon County">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="state">State</label>
+                            <input type="text" id="state" required placeholder="GA">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="zip">ZIP Code</label>
+                            <input type="text" id="zip" required placeholder="31510">
+                        </div>
+                    </div>
+
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 1rem; color: var(--primary-blue);">Payment Information</h4>
+
+                    <div class="form-group">
+                        <label for="card">Card Number</label>
+                        <input type="text" id="card" required placeholder="•••• •••• •••• ••••">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="exp">Expiration Date</label>
+                            <input type="text" id="exp" required placeholder="MM/YY">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" required placeholder="123">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-complete-order">Place Order ($20.00)</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Adam Hamdan for PRESIDENT</strong> &bull; Constitution Party</p>
+        <div class="footer-disclaimer">PAID FOR BY THE COMMITTEE TO ELECT ADAM HAMDAN</div>
+    </footer>
+    <script src="style.js"></script>
+</body>
+
+</html>

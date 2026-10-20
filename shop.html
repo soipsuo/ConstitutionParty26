@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Shop | Constitution Party</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .product-card {
+            background-color: var(--card-bg, #ffffff);
+            border: 2px solid var(--gold, #C5A059);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-image-box {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            margin-bottom: 1rem;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-blue, #0A192F);
+            margin: 0.5rem 0;
+        }
+        
+        .btn-buy-now {
+            display: inline-block;
+            width: 100%;
+            padding: 0.85rem 0;
+            background-color: var(--gold, #C5A059);
+            color: #0A192F;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.25s ease;
+            margin-top: 1rem;
+        }
+        
+        .btn-buy-now:hover {
+            background-color: #e6b800;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <button class="burger-btn" onclick="toggleSidebar()">
+                <div></div><div></div><div></div>
+            </button>
+            <div class="logo">Adam Hamdan <span>| CONSTITUTION PARTY</span></div>
+        </div>
+        <div class="top-nav">
+            <a href="index.html" class="top-nav-link">Home</a>
+            <a href="shop.html" class="top-nav-link">Shop</a>
+            <a href="donate.html" class="btn-donate-nav">DONATE</a>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Adam Hamdan for President</h2>
+            <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+        </div>
+        <div class="nav-category">
+            <h3>Main Navigation</h3>
+            <ul>
+                <li><a href="index.html">Home Page</a></li>
+                <li><a href="about.html">About the Candidate</a></li>
+                <li><a href="issues.html">Political Issues</a></li>
+            </ul>
+        </div>
+        <div class="nav-category">
+            <h3>Campaign & Media</h3>
+            <ul>
+                <li><a href="materials.html">Campaign Materials</a></li>
+                <li><a href="news.html">News & Press Releases</a></li>
+                <li><a href="team.html">Meet the Campaign Team</a></li>
+                <li><a href="shop.html" class="active-link">Official Campaign Shop</a></li>
+            </ul>
+        </div>
+        <div class="nav-category">
+            <h3>Get Involved</h3>
+            <ul>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="donate.html" class="highlight-link">Donate to Campaign</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>Official Campaign Shop</h1>
+        <p>Support the campaign and show your constitutional pride</p>
+    </div>
+
+    <section class="container">
+        <div class="shop-grid">
+
+            <!-- Bumper Sticker Item -->
+            <div class="product-card">
+                <div>
+                    <div class="product-image-box">
+                        <img src="images/bumpersticker.jpg" alt="Adam Hamdan Bumper Sticker" onerror="this.src='https://via.placeholder.com/400x220?text=Official+Bumper+Sticker'">
+                    </div>
+                    <h3 style="font-family: var(--font-heading); color: var(--primary-blue);">Official Campaign Bumper Sticker</h3>
+                    <p style="color: #555; margin-top: 0.5rem; font-size: 0.95rem;">High-quality, weather-resistant vinyl bumper sticker. Perfect for cars, windows, or laptops to show support for liberty!</p>
+                    <div class="product-price">$20.00</div>
+                </div>
+
+                <a href="checkout.html" class="btn-buy-now">Buy Now / Proceed to Checkout</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Adam Hamdan for PRESIDENT</strong> &bull; Constitution Party</p>
+        <div class="footer-disclaimer">PAID FOR BY THE COMMITTEE TO ELECT ADAM HAMDAN</div>
+    </footer>
+    <script src="style.js"></script>
+</body>
+
+</html>
